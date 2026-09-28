@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import {
   ArrowDown,
   ArrowUpRight,
@@ -61,7 +62,13 @@ export default function Page() {
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
       <header className="site-header"><div className="container nav-inner"><Logo /><nav className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Primary navigation"><a href="#home" onClick={closeMenu}>Home</a><a href="#about" onClick={closeMenu}>About</a><a href="#projects" onClick={closeMenu}>Projects</a><a href="#skills" onClick={closeMenu}>Skills</a><a href="#contact" onClick={closeMenu}>Contact</a></nav><a className="button button-small nav-cta" href="#contact">Let&apos;s Talk <ArrowUpRight /></a><button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button></div></header>
 
-      <section id="home" className="hero container section-grid"><div className="hero-copy"><p className="eyebrow"><span className="pulse-dot" /> Frontend Developer · Nigeria</p><h1>Hi, I&apos;m <span>Ali</span>.<br />I build modern<br />web experiences.</h1><p className="hero-description">I&apos;m a frontend developer focused on turning ideas into clean, responsive and user-friendly digital products.</p><div className="hero-actions"><a href="#projects" className="button">View My Projects <ArrowDown /></a><a href="#" className="button button-ghost">Download CV <Download /></a></div><div className="social-links"><a href="https://github.com" aria-label="GitHub"><Code2 /></a><a href="https://linkedin.com" aria-label="LinkedIn"><Globe2 /></a><a href="https://x.com" aria-label="X"><XIcon /></a><a href="mailto:hello@example.com" aria-label="Email"><Mail /></a></div></div><div className="hero-visual"><div className="hero-glow" /><div className="portrait-card"><div className="portrait-background" /><div className="portrait-person"><div className="portrait-head" /><div className="portrait-neck" /><div className="portrait-shirt" /></div><div className="portrait-label"><Sparkles /> Turning ideas<br /> into real products</div></div><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /></div></section>
+      <section id="home" className="hero container section-grid">
+        <div className="hero-copy"><p className="eyebrow">
+          <span className="pulse-dot" />
+           Frontend Developer · Nigeria</p><h1>Hi, I&apos;m <span>Ali</span>.<br />I build modern<br />web experiences.</h1>
+            <p className="hero-description">I&apos;m a frontend developer focused on turning ideas into clean, 
+              responsive and user-friendly digital products.
+            </p><div className="hero-actions"><a href="#projects" className="button">View My Projects <ArrowDown /></a><a href="#" className="button button-ghost">Download CV <Download /></a></div><div className="social-links"><a href="https://github.com" aria-label="GitHub"><Code2 /></a><a href="https://linkedin.com" aria-label="LinkedIn"><Globe2 /></a><a href="https://x.com" aria-label="X"><XIcon /></a><a href="mailto:hello@example.com" aria-label="Email"><Mail /></a></div></div><div className="hero-visual"><div className="hero-glow" /><div className="portrait-card"><Image className="portrait-image" src="/profile.jpg" alt="Ali" fill priority sizes="(max-width: 800px) 100vw, 410px" /><div className="portrait-label"><Sparkles /> Turning ideas<br /> into real products</div></div><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /></div></section>
 
       <section id="about" className="about-section section-border"><div className="container section-grid about-grid"><div><p className="section-kicker">01 · About me</p><h2>Who <span>I am</span></h2></div><div className="about-content"><p>I&apos;m Ali, a frontend developer based in Nigeria. I started my journey with a passion for technology, and I&apos;ve been building ever since — from learning HTML and CSS to working on real-world projects like Gleemorra.</p><p>I&apos;m currently focused on growing my skills in Next.js, backend integration and modern web technologies. My goal is to become a well-rounded developer and contribute to products that make a difference.</p><div className="traits"><span><Code2 /> Problem solver</span><span><Globe2 /> Team player</span><span><Sparkles /> Always learning</span></div></div></div></section>
 
