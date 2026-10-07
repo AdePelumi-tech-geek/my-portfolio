@@ -151,7 +151,7 @@ export default function Page() {
             <a href="#contact" onClick={closeMenu}>Contact</a>
           </nav>
           <a className="button button-small nav-cta" href="#contact">
-            Let&apos;s Talk <ArrowUpRight />
+            Let's Talk <ArrowUpRight />
           </a>
           <button
             className="mobile-menu"
@@ -170,12 +170,12 @@ export default function Page() {
             Frontend Developer · Nigeria
           </p>
           <h1>
-            Hi, I&apos;m <span>Ali</span>.<br />
+            Hi, I'm <span>Ali-Emmanuel</span>.<br />
             I build modern<br />
             web experiences.
           </h1>
           <p className="hero-description">
-            I&apos;m a frontend developer focused on turning ideas into clean,
+            I'm a frontend developer focused on turning ideas into clean,
             responsive and user-friendly digital products.
           </p>
           <div className="hero-actions">
@@ -221,16 +221,21 @@ export default function Page() {
           </div>
           <div className="about-content">
             <p>
-              I&apos;m Ali, a frontend developer based in Nigeria. I started my
-              journey with a passion for technology, and I&apos;ve been building
-              ever since — from learning HTML and CSS to working on real-world
-              projects like Gleemorra.
-            </p>
-            <p>
-              I&apos;m currently focused on growing my skills in Next.js, backend
-              integration and modern web technologies. My goal is to become a
-              well-rounded developer and contribute to products that make a
-              difference.
+              I'm Ali - Emmanuel, a frontend developer based in Nigeria. 
+              I started my journey with a passion for technology, 
+              and I've been building ever since — from learning HTML and CSS to 
+              working on real-world projects like Gleemorra.
+              I'm currently focused on growing my skills in Next.js, 
+              backend integration, and modern web technologies. 
+              Alongside development, I'm also building a strong foundation in Data 
+              Annotation and AI-related workflows, expanding my ability to work with 
+              data-driven technologies.
+              Beyond technology, I have a growing interest in the legal field and 
+              hope to pursue an LL.B. 
+              (Bachelor of Laws) degree at the University of Ilorin (UNILORIN) in 
+              the future. My goal is to become a well-rounded individual with skills 
+              across technology, data, and law, while continuously learning and 
+              contributing to products and ideas that make a difference.
             </p>
             <div className="traits">
               <span><Code2 /> Problem solver</span>
@@ -245,7 +250,7 @@ export default function Page() {
         <div className="section-heading">
           <div>
             <p className="section-kicker">02 · Selected work</p>
-            <h2>Things I&apos;ve <span>built</span></h2>
+            <h2>Things I've <span>built</span></h2>
           </div>
           <a className="text-link" href="#contact">
             Have a project in mind? <ArrowUpRight />
@@ -362,10 +367,10 @@ export default function Page() {
         <div className="container contact-grid">
           <div>
             <p className="section-kicker">05 · Get in touch</p>
-            <h2>Let&apos;s build something <span>together.</span></h2>
+            <h2>Let's build something <span>together.</span></h2>
             <p className="contact-copy">
               Have an idea, a collaboration in mind or just want to say hello?
-              I&apos;d love to hear from you.
+              I'd love to hear from you.
             </p>
             <a className="contact-email" href="mailto:emmanekchi@gmail.com">
               <Mail /> emmanekechi@gmail.com <ArrowUpRight />
