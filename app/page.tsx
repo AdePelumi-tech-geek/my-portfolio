@@ -182,15 +182,16 @@ export default function Page() {
             <a href="#projects" className="button">
               View My Projects <ArrowDown />
             </a>
-            <a href="#" className="button button-ghost">
+            <a href="/Ali-Emmanuel-CV.pdf"
+              download="Ali-Emmanuel-CV.pdf"
+             className="button button-ghost">
               Download CV <Download />
             </a>
           </div>
           <div className="social-links">
-            <a href="https://github.com" aria-label="GitHub"><Code2 /></a>
-            <a href="https://linkedin.com" aria-label="LinkedIn"><Globe2 /></a>
-            <a href="https://x.com" aria-label="X"><XIcon /></a>
-            <a href="mailto:hello@example.com" aria-label="Email"><Mail /></a>
+            <a href="https://github.com/AdePelumi-tech-geek" aria-label="GitHub"><Code2 /></a>
+            <a href="https://x.com/AliEmmanuego" aria-label="X"><XIcon /></a>
+            <a href="mailto:emmanekechi@gmail.com" aria-label="Email"><Mail /></a>
           </div>
         </div>
         <div className="hero-visual">
@@ -365,52 +366,97 @@ export default function Page() {
 
       <section id="contact" className="contact-section section-border">
         <div className="container contact-grid">
+
           <div>
             <p className="section-kicker">05 · Get in touch</p>
-            <h2>Let's build something <span>together.</span></h2>
+
+            <h2>
+              Let's build something <span>together.</span>
+            </h2>
+
             <p className="contact-copy">
               Have an idea, a collaboration in mind or just want to say hello?
               I'd love to hear from you.
             </p>
-            <a className="contact-email" href="mailto:emmanekchi@gmail.com">
-              <Mail /> emmanekechi@gmail.com <ArrowUpRight />
+
+            <a
+              className="contact-email"
+              href="https://wa.me/23408167393039"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail /> WhatsApp me <ArrowUpRight />
             </a>
           </div>
+
           <form
             className="contact-form"
             onSubmit={(event) => {
               event.preventDefault()
+
+              const form = event.currentTarget as HTMLFormElement
+              const name = (form.elements.namedItem('name') as HTMLInputElement | null)?.value ?? ''
+              const email = (form.elements.namedItem('email') as HTMLInputElement | null)?.value ?? ''
+              const message = (form.elements.namedItem('message') as HTMLTextAreaElement | null)?.value ?? ''
+
+              const whatsappMessage = `Hello Ali,
+
+              My name is ${name}.
+              My email is ${email}.
+              ${message}`
+              const whatsappUrl = `https://wa.me/2348167393039?text=${encodeURIComponent(
+                whatsappMessage
+              )}`
+              window.open(whatsappUrl, '_blank')
               setSent(true)
             }}
-          >
-            <label>
-              Name
-              <input required placeholder="Your name" />
-            </label>
-            <label>
-              Email
-              <input required type="email" placeholder="your email" />
-            </label>
-            <label>
-              Message
-              <textarea required placeholder="Tell me about your project..." rows={4} />
-            </label>
-            <button className="button" type="submit">
-              {sent ? 'Message ready to send' : 'Send message'}
-              {sent ? <Check /> : <Send />}
-            </button>
-          </form>
-        </div>
-      </section>
+            >
+              <label>
+                Name
+                <input
+                  required
+                  name="name"
+                  placeholder="Your name"
+                />
+              </label>
+
+              <label>
+                Email
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  placeholder="your email"
+                />
+              </label>
+
+              <label>
+                Message
+                <textarea
+                  required
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  rows={4}
+                />
+              </label>
+
+              <button className="button" type="submit">
+                {sent ? 'Message ready to send' : 'Send message'}
+                {sent ? <Check /> : <Send />}
+              </button>
+            </form>
+
+          </div>
+        </section>
 
       <footer className="footer">
         <div className="container footer-inner">
           <Logo />
           <p>Frontend Developer · Creator · Lifelong Learner</p>
           <div className="footer-social">
-            <a href="https://github.com" aria-label="GitHub"><Code2 /></a>
-            <a href="https://linkedin.com" aria-label="LinkedIn"><Globe2 /></a>
-            <a href="mailto:hello@example.com" aria-label="Email"><Mail /></a>
+            <a href="https://github.com/AdePelumi-tech-geek" aria-label="GitHub"><Code2 /></a>
+            <a href="https://x.com/AliEmmanuego" aria-label="X"><XIcon /></a>
+            <a href="mailto:emmanekechi@gmail.com" aria-label="Email"><Mail /></a>
           </div>
           <small>© 2026 Ali. Built with intention.</small>
         </div>
