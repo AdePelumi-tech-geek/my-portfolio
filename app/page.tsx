@@ -373,7 +373,6 @@ export default function Page() {
 
       <section id="contact" className="contact-section section-border">
         <div className="container contact-grid">
-
           <div>
             <p className="section-kicker">05 · Get in touch</p>
 
@@ -388,7 +387,7 @@ export default function Page() {
 
             <a
               className="contact-email"
-              href="https://wa.me/23408167393039"
+              href="https://wa.me/2348167393039"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -399,62 +398,124 @@ export default function Page() {
           <form
             className="contact-form"
             onSubmit={(event) => {
-              event.preventDefault()
+              event.preventDefault();
 
-              const form = event.currentTarget as HTMLFormElement
-              const name = (form.elements.namedItem('name') as HTMLInputElement | null)?.value ?? ''
-              const email = (form.elements.namedItem('email') as HTMLInputElement | null)?.value ?? ''
-              const message = (form.elements.namedItem('message') as HTMLTextAreaElement | null)?.value ?? ''
+              const form = event.currentTarget;
 
-              const whatsappMessage = `Hello Ali,
+              const name = (
+                form.elements.namedItem("name") as HTMLInputElement
+              ).value;
 
-              My name is ${name}.
-              My email is ${email}.
-              ${message}`
-              const whatsappUrl = `https://wa.me/2348167393039?text=${encodeURIComponent(
-                whatsappMessage
-              )}`
-              window.open(whatsappUrl, '_blank')
-              setSent(true)
-            }}
-            >
-              <label>
-                Name
-                <input
-                  required
-                  name="name"
-                  placeholder="Your name"
-                />
-              </label>
+              const email = (
+                form.elements.namedItem("email") as HTMLInputElement
+              ).value;
 
-              <label>
-                Email
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  placeholder="your email"
-                />
-              </label>
+              const message = (
+                form.elements.namedItem("message") as HTMLTextAreaElement
+              ).value;
 
-              <label>
-                Message
-                <textarea
-                  required
-                  name="message"
-                  placeholder="Tell me about your project..."
-                  rows={4}
-                />
+                const whatsappMessage = `Hello Ali,
+
+        My name is ${name}.
+        My email is ${email}.
+
+        ${message}`;
+
+          const whatsappUrl = `https://wa.me/2348167393039?text=${encodeURIComponent(
+            whatsappMessage
+          )}`;
+
+          window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+          form.reset();
+          setSent(true);
+        }}
+      >
+        <label>
+          Name
+          <input
+            required
+            name="name"
+            placeholder="Your name"
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            required
+            name="email"
+            type="email"
+            placeholder="Your email"
+          />
+        </label>
+
+        <label>
+          Message
+          <textarea
+            required
+            name="message"
+            placeholder="Tell me about your project..."
+            rows={4}
+          />
               </label>
 
               <button className="button" type="submit">
-                {sent ? 'Message ready to send' : 'Send message'}
-                {sent ? <Check /> : <Send />}
+                Send message <Send />
               </button>
             </form>
-
           </div>
-        </section>
+
+        {sent && (
+          <div
+            className="contact-success-overlay"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) {
+                setSent(false);
+              }
+            }}
+          >
+            <div
+              className="contact-success-card"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="contact-success-title"
+            >
+              <div className="contact-success-icon">
+                <Check size={30} />
+              </div>
+
+              <p className="section-kicker">MESSAGE PREPARED</p>
+
+              <h3 id="contact-success-title">
+                You've made the first move<span>.</span>
+              </h3>
+
+              <p className="contact-success-copy">
+                Thank you for reaching out and trusting me with your idea.
+                Your message is ready in WhatsApp.
+              </p>
+
+              <p className="contact-success-note">
+                Tap <strong>Send</strong> in WhatsApp to deliver your message.
+                Once I receive it, Ali Emmanuel will get back to you shortly.
+              </p>
+
+              <button
+                type="button"
+                className="button contact-success-button"
+                onClick={() => setSent(false)}
+              >
+                Got it, thanks <Check size={18} />
+              </button>
+
+              <p className="contact-success-footer">
+                Every great collaboration starts somewhere.
+              </p>
+            </div>
+          </div>
+        )}
+      </section>
 
       <footer className="footer">
         <div className="container footer-inner">
