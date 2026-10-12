@@ -238,6 +238,13 @@ export default function Page() {
               across technology, data, and law, while continuously learning and 
               contributing to products and ideas that make a difference.
             </p>
+            <br/>
+            <p>
+              **Technical SEO:** 
+              Google Search Console, XML sitemap configuration and submission, robots.
+              txt configuration, URL inspection, indexing diagnostics, and basic 
+              crawlability troubleshooting.
+            </p>
             <div className="traits">
               <span><Code2 /> Problem solver</span>
               <span><Globe2 /> Team player</span>
@@ -334,7 +341,7 @@ export default function Page() {
             <div><strong>02+</strong><span>Real projects</span></div>
             <div><strong>02</strong><span>Completed training</span></div>
             <div><strong>∞</strong><span>Curiosity</span></div>
-            <div><strong>24/7</strong><span>Big dreams</span></div>
+            <div><strong>3+</strong><span>year's of experience</span></div>
           </div>
         </div>
       </section>
