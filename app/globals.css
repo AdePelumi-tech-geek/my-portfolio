@@ -834,6 +834,116 @@ h2 {
   align-self: flex-start;
   margin-top: 4px;
 }
+.contact-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(12, 10, 25, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: promptFade 0.2s ease-out;
+}
+.contact-success-card {
+  width: 100%;
+  max-width: 370px;
+  padding: 28px 26px;
+  border: 1px solid rgba(160, 130, 255, 0.2);
+  border-radius: 20px;
+  background: #fff;
+  color: #171329;
+  text-align: center;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+  animation: promptPop 0.25s ease-out;
+}
+.contact-success-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0eaff;
+  color: #7545df;
+}
+.contact-success-card .section-kicker {
+  margin-bottom: 10px;
+  color: #7545df;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.contact-success-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+}
+.contact-success-card h3 span {
+  color: #7545df;
+}
+.contact-success-copy {
+  margin: 0 0 12px;
+  color: #686477;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.contact-success-note {
+  margin: 0 0 22px;
+  color: #777187;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.contact-success-button {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #7545df;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.contact-success-button:hover {
+  background: #6235cb;
+  transform: translateY(-1px);
+}
+.contact-success-footer {
+  margin: 16px 0 0;
+  color: #a09aaf;
+  font-size: 11px;
+}
+@keyframes promptFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes promptPop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-success-overlay,
+  .contact-success-card {
+    animation: none;
+  }
+}
 .footer {
   padding: 30px 0 42px;
 }
